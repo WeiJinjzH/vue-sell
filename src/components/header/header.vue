@@ -22,7 +22,10 @@
                 <i class="icon-keyboard_arrow_right"></i>
             </div>
         </div>
-        <div class="bullentin-wrapper"></div>
+        <div class="bullentin-wrapper">
+            <span class="bullentin-title"></span><span class="bullentin-text">{{seller.bulletin}}</span>
+            <i class="icon-keyboard_arrow_right"></i>
+        </div>
     </div>
 </template>
 <script type="text/ecmascrpt-6">
@@ -112,4 +115,31 @@
                 margin-left: 2px
                 line-height: 24px
                 font-size: 10px
+    .bullentin-wrapper
+        position: relative
+        height: 28px
+        line-height: 28px
+        padding: 0 22px 0 12px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        background: rgba(7, 17, 27, 0.2)
+        .bullentin-title
+            display: inline-block
+            vertical-align: top
+            margin-top: 7px
+            width: 22px
+            height: 12px
+            bg-image('bulletin')
+            background-size: 22px 12px
+            background-repeat: no-repeat
+        .bullentin-text
+            margin: 0 4px
+            vertical-align: top
+            font-size: 10px
+        .icon-keyboard_arrow_right
+            position: absolute
+            font-size: 10px
+            right: 12px
+            top: 8px
 </style>
