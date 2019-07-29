@@ -26,6 +26,9 @@
             <span class="bullentin-title"></span><span class="bullentin-text">{{seller.bulletin}}</span>
             <i class="icon-keyboard_arrow_right"></i>
         </div>
+        <div class="background">
+            <img :src="seller.avatar" width="100%" height="100%" />
+        </div>
     </div>
 </template>
 <script type="text/ecmascrpt-6">
@@ -44,8 +47,9 @@
 @import './../../common/stylus/mixin'
 
 .header
+    position: relative
     color: #ffffff
-    background: #999
+    background: rgba(7, 17, 27, 0.2)
     .content-wrapper
         position:relative
         padding: 24px 12px 28px
@@ -142,4 +146,12 @@
             font-size: 10px
             right: 12px
             top: 8px
+    .background
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        filter: blur(10px)
 </style>
