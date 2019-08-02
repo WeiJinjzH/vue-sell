@@ -32,41 +32,8 @@
         <div v-show="detailShow" class="detail">
             <div class="detail-wrapper clearfix">
                 <div class="detail-main">
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
-                    <p>{{seller.bulletin}}</p>
+                    <h1 class="name">{{seller.name}}</h1>
+                    <star :score="seller.score" :size="48"></star>
                 </div>
             </div>
             <div class="detail-close" @click="hideDetail">
@@ -76,6 +43,8 @@
     </div>
 </template>
 <script type="text/ecmascrpt-6">
+    import star from 'components/star/star'
+
     export default {
         props: {
             seller: {
@@ -98,6 +67,9 @@
         created() {
             this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
         },
+        components: {
+            star
+        }
     }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -223,9 +195,15 @@
         background: rgba(7, 17, 27, 0.8)
         .detail-wrapper
             min-height: 100%
+            width: 100%
             .detail-main
                 margin-top: 64px
                 padding-bottom: 64px
+                .name
+                    line-height: 16px
+                    text-align: center
+                    font-size: 16px
+                    font-weight: 700
         .detail-close
             position: relative
             width: 32px
