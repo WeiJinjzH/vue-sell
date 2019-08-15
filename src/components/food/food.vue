@@ -70,7 +70,7 @@
                 this.showFlag = true
                 // 由于组件可能被多个组件使用，因此每次展示的时候都要先初始化一遍
                 this.selectType = ALL
-                this.onlyContent = true
+                this.onlyContent = false
                 this.$nextTick(() => {
                     if (!this.scroll) {
                         this.scroll = new BScroll(this.$els.food, { click: true })
